@@ -6,7 +6,7 @@
   "scripts": {
     "build": "parcel build src/*.html --public-url /goit-js-hw-12-countries/",
     "dev": "parcel src/*.html",
-    "deploy": "gh-psges -d dist",
+    "deploy": "gh-pages -d dist",
     "predeploy": "npm run build"
   },
   "repository": {
