@@ -12,3 +12,7 @@
 10. git add \*
 11. git commit -m "Commit message"
 12. git push origin main
+13. https://tproger.ru/translations/git-quick-start/
+14. https://git-scm.com/book/uk/v2
+15. https://parceljs.org/getting_started.html
+16. https://github.com/posthtml/posthtml-include
