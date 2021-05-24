@@ -21,6 +21,7 @@
   "homepage": "https://Zhdanov-Eugene.github.io/goit-js-hw-12-countries",
   "devDependencies": {
     "parcel-bundler": "^1.12.5",
+    "pnotify": "^5.2.0",
     "posthtml-include": "^1.7.1",
     "sass": "^1.34.0"
   },

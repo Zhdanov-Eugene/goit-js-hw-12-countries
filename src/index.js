@@ -1,1 +1,2 @@
-console.log('Привет');
+// console.log('Привет');
+import "./sass/main.scss";

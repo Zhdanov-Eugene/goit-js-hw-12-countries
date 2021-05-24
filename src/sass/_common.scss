@@ -1,0 +1,27 @@
+// Файл стилей
+body {
+  background-color: rgb(183, 240, 186);
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.title {
+  margin: 0px;
+  margin-bottom: 25px;
+  margin-top: 50px;
+
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  text-align: center;
+  text-shadow: 2px 2px 4px #837d7d;
+}
+
+.form-control {
+  text-align: center;
+
+  box-shadow: 2px 4px 4px rgb(0 0 0 / 30%);
+  background-color: rgb(224, 173, 173);
+}
