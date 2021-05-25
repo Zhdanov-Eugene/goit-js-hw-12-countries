@@ -1,8 +1,8 @@
 // console.log('Привет');
 
 import fetchCountries from './fetchCountries';
-import countriesCardListTpl from './templates/countries-card.hbs';
-import cardCountryTpl from './templates/country.hbs';
+import countriesCardListTpl from './tamplates/countries-card.hbs';
+import cardCountryTpl from './tamplates/country.hbs';
 import { alert, error } from '../node_modules/@pnotify/core/dist/PNotify.js';
 import "./sass/main.scss";
 import "../node_modules/@pnotify/core/dist/PNotify.css";
