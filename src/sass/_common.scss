@@ -25,3 +25,27 @@ body {
   box-shadow: 2px 4px 4px rgb(0 0 0 / 30%);
   background-color: rgb(224, 173, 173);
 }
+
+.countries-section {
+  margin-bottom: 50px;
+}
+
+.country-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-color: inherit;
+}
+
+.title-name {
+  margin: 0px;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px #837d7d;
+}
+
+.card {
+  box-shadow: 2px 4px 4px rgb(0 0 0 / 30%);
+  background-color: rgb(224, 173, 173);
+}

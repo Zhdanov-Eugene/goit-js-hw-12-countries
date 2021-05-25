@@ -1,10 +1,59 @@
 // console.log('Привет');
-import "./sass/main.scss";
-import './fetchCountries';
 
-import countriesCardList from './templates/countries-card.hbs';
-import cardCountry from './templates/country.hbs';
-// import '';
-// import '';
-// import '';
-// import '';
+import fetchCountries from './fetchCountries';
+import countriesCardListTpl from './templates/countries-card.hbs';
+import cardCountryTpl from './templates/country.hbs';
+import { alert, error } from '../node_modules/@pnotify/core/dist/PNotify.js';
+import "./sass/main.scss";
+import "../node_modules/@pnotify/core/dist/PNotify.css";
+import '@pnotify/core/dist/BrightTheme.css';
+
+
+const debounce = require('lodash.debounce');
+
+const inputRef = document.querySelector('#input');
+const countryContainerRef = document.querySelector('.country-container');
+
+inputRef.addEventListener('input', debounce(onInputFilter, 500));
+
+function onInputFilter(event) {
+    const value = event.target.value;
+
+    fetchCountries(value)
+        .then(countries => {
+
+            cleanMarkup();
+
+            if (countries.length === 1) {
+                createCountriesMarkup(countries, cardCountryTpl);
+            }
+
+            if (countries.length < 10 && countries.length > 1) {
+                createCountriesMarkup(countries, countriesCardListTpl);
+            }
+
+            if (countries.length > 10) {
+                alert({
+                    text: 'Type more specific query!',
+                    delay: 2000,
+                });
+            }
+        })
+        .catch(onError);
+}
+
+function createCountriesMarkup(array, tamplate) {
+    const markup = tamplate(array);
+    countryContainerRef.insertAdjacentHTML('beforeend', markup);
+}
+
+function onError() {
+    error({
+        text: 'Nothing on your request! :(',
+        delay: 2000,
+    });
+}
+
+function cleanMarkup() {
+    countryContainerRef.innerHTML = '';
+}
