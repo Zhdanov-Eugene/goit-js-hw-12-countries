@@ -25,11 +25,11 @@ function onInputFilter(event) {
             cleanMarkup();
 
             if (countries.length === 1) {
-                createCountriesMarkup(countries, cardCountryTpl);
+                renderCountriesMarkup(countries, cardCountryTpl);
             }
 
             if (countries.length < 10 && countries.length > 1) {
-                createCountriesMarkup(countries, countriesCardListTpl);
+                renderCountriesMarkup(countries, countriesCardListTpl);
             }
 
             if (countries.length > 10) {
@@ -40,9 +40,10 @@ function onInputFilter(event) {
             }
         })
         .catch(onError);
+    console.log('catch is in progress');
 }
 
-function createCountriesMarkup(array, tamplate) {
+function renderCountriesMarkup(array, tamplate) {
     const markup = tamplate(array);
     countryContainerRef.insertAdjacentHTML('beforeend', markup);
 }

@@ -24,6 +24,7 @@ body {
 
   box-shadow: 2px 4px 4px rgb(0 0 0 / 30%);
   background-color: rgb(224, 173, 173);
+  border-radius: 4px;
 }
 
 .countries-section {
@@ -48,4 +49,5 @@ body {
 .card {
   box-shadow: 2px 4px 4px rgb(0 0 0 / 30%);
   background-color: rgb(224, 173, 173);
+  align-items: center;
 }
