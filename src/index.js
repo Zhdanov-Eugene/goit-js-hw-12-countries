@@ -1,20 +1,17 @@
 // console.log('Привет');
-
-import fetchCountries from './fetchCountries';
-import countriesCardListTpl from './tamplates/countries-card.hbs';
+import getRefs from './js/get-refs';
+import fetchCountries from './js/fetchCountries';
+import countriesCardTpl from './tamplates/countries-card.hbs';
 import cardCountryTpl from './tamplates/country.hbs';
 import { alert, error } from '../node_modules/@pnotify/core/dist/PNotify.js';
 import "./sass/main.scss";
 import "../node_modules/@pnotify/core/dist/PNotify.css";
 import '@pnotify/core/dist/BrightTheme.css';
 
-
 const debounce = require('lodash.debounce');
+const refs = getRefs();
 
-const inputRef = document.querySelector('#input');
-const countryContainerRef = document.querySelector('.country-container');
-
-inputRef.addEventListener('input', debounce(onInputFilter, 500));
+refs.inputRef.addEventListener('input', debounce(onInputFilter, 500));
 
 function onInputFilter(event) {
     const value = event.target.value;
@@ -29,7 +26,7 @@ function onInputFilter(event) {
             }
 
             if (countries.length < 10 && countries.length > 1) {
-                renderCountriesMarkup(countries, countriesCardListTpl);
+                renderCountriesMarkup(countries, countriesCardTpl);
             }
 
             if (countries.length > 10) {
@@ -45,7 +42,7 @@ function onInputFilter(event) {
 
 function renderCountriesMarkup(array, tamplate) {
     const markup = tamplate(array);
-    countryContainerRef.insertAdjacentHTML('beforeend', markup);
+    refs.countryContainerRef.insertAdjacentHTML('beforeend', markup);
 }
 
 function onError() {
@@ -56,5 +53,5 @@ function onError() {
 }
 
 function cleanMarkup() {
-    countryContainerRef.innerHTML = '';
+    refs.countryContainerRef.innerHTML = '';
 }

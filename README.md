@@ -9,10 +9,10 @@
 7.  npm run dev
 8.  work
 9.  npm run build
-10. git add \*
-11. git commit -m "Commit message"
-12. git push origin main
-13. npm run deploy
+10. npm run deploy
+11. git add \*
+12. git commit -m "Commit message"
+13. git push origin main
 14. https://tproger.ru/translations/git-quick-start/
 15. https://git-scm.com/book/uk/v2
 16. https://parceljs.org/getting_started.html

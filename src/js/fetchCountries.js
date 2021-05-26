@@ -8,11 +8,3 @@ export default function fetchCountries(searchQuery) {
 }
 // файл fetchCountries.js с дефолтным экспортом функции fetchCountries(searchQuery), возвращающей промис с массивом стран, результат запроса к API.
 // Response.prototype.json() - используется, когда от бекенда ожидаются данные в JSON - формате.
-
-// const url = 'https://restcountries.eu/rest/v2/name/${searchQuery}';
-
-// function fetchCountries(searchQuery) {
-//     return fetch(url).then(response => response.json());
-// }
-
-// export default (fetchCountries);
